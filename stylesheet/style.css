@@ -1,0 +1,11 @@
+.maxbadges{
+    background: lightskyblue;
+    text-align: center;
+    border-radius: 15px;
+    padding-inline: 5px;
+    margin: 1px;
+    font-size: small;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       
+}
