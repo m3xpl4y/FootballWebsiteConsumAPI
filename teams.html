@@ -67,12 +67,22 @@
 
 <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 <script id="team-template" type="text/x-handlebars-template">
-    <div class="container-sm" data-id={{id}}>
+    <div onClick="showId(this.id)" class="container-sm" id="{{id}}">
         <div class="row row-cols-4 list-group-item-action">
-            <div class="col-sm text-center"><img src={{crestUrl}} width="50" alt="Club Logo"></div>
-            <div class="col-sm text-center">{{tla}}</div>
-            <div class="col-sm text-center">{{name}}</div>
-            <div class="col-sm text-center">{{founded}}</div>
+          <div class="col-sm text-center"><img src={{crestUrl}} width="50" alt="Club Logo"></div>
+          <div class="col-sm text-center">{{tla}}</div>
+          <div class="col-sm text-center">{{name}}</div>
+          <div class="col-sm text-center">{{founded}}</div>
         </div>
       </div>
+</script>
+<script id="player-template" type="text/x-handlebars-template">
+  <div class="container-sm" id="{{id}}">
+      <div class="row row-cols-4 list-group-item-action">
+          <div class="col-sm text-center">{{name}}</div>
+          <div class="col-sm text-center">{{position}}</div>
+          <div class="col-sm text-center">{{nationality}}</div>
+          <div class="col-sm text-center">{{role}}</div>
+      </div>
+    </div>
 </script>

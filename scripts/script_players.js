@@ -1,10 +1,11 @@
-let urlPlayers = "https://api.fooball-data.org/v2/players/44";
+let urlPlayers = "https://api.football-data.org/v2/teams/";
 let token = "e55fd5458fb54892ae0bd92659f71457";
 
-function loadPlayers(){
+function loadPlayers(id){
+
     var source = document.getElementById("player-template").innerHTML;
     var template = Handlebars.compile(source);
-    fetch(urlPlayers, {
+    fetch(urlPlayers + id, {
         method: "GET",
         headers: {
             "x-auth-token": token,
@@ -17,10 +18,17 @@ function loadPlayers(){
                 html += template(element);
                 console.log(element);
             }); 
-            document.getElementById("players").innerHTML = html;
+            document.getElementById("teams").innerHTML = html;
         })
         .catch(function(err){
             console.log(err);
         });
 }
-loadPlayers();
+
+document.getElementById("team_id").addEventListener("click", function() {
+
+    let id = document.getElementById("team-id").getAttribute("value");
+
+    loadPlayers(id);
+
+})
